@@ -1,0 +1,132 @@
+@import "../../styles/mixins.sass"
+
+button
+  padding: 0
+  border: none
+  font: inherit
+  color: inherit
+  background-color: transparent
+  cursor: pointer
+
+body
+  padding: 0
+  margin: 0
+
+.slider
+  width: 1200px
+  height: 320px
+  &__navigation
+    display: flex
+    flex-direction: row
+
+    max-width: 1244px
+    justify-content: space-between
+
+    position: relative
+    margin-top: -182px
+
+.additions
+  display: flex
+  flex-direction: row
+
+  margin: 48px 0 108px 0
+  &__wrapper
+    width: 588px
+    height: 300px
+    border-radius: 16px
+
+    border: 1px solid #1222581E
+
+    display: flex
+    flex-direction: row
+    &:not(:first-child)
+      margin-left: 24px
+  &__info
+    margin-left: 40px
+    h3
+      font-weight: 600
+      font-size: 32px
+      line-height: 40px
+
+      margin-top: 40px
+      margin-bottom: 0
+    p
+      opacity: 56%
+      font-size: 16px
+      line-height: 24px
+      width: 274px
+
+      margin-top: 14px
+      margin-bottom: 0
+    button
+      border: none
+      color: inherit
+      background-color: transparent
+      padding: 0
+
+      margin-top: 46px
+  &__map
+    margin-left: -40px
+    margin-top: 45px
+  &__ecomarket
+    width: 255px
+    height: 255px
+
+    margin-top: 40px
+    margin-left: 32px
+
+
+
+.slide
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+
+  background: #B3EDC8
+  border-radius: 24px
+  &__info
+    margin-left: 64px
+    margin-top: 56px
+  &__img
+    border-radius: 24px
+
+  &__title
+    margin: 0
+  &__text
+    font-size: 16px
+    line-height: 24px
+
+    font-weight: 400
+
+    margin-top: 16px
+    margin-bottom: 0
+    padding: 0
+  &__btn
+    padding: 12px 24px
+    background: $c-green
+    border-radius: 8px
+
+    color: #FFFFFF
+
+    font-weight: 500
+    font-size: 16px
+    line-height: 24px
+
+    margin-top: 40px
+  &__2
+    background-color: #FFE48F
+  &__3
+    background-color: #BFF0DE
+
+
+
+
+
+.swiper-button-next
+  background-repeat: no-repeat
+  background-size: 100% auto
+  background-position: center
+
+
+.swiper-button-next::after
+  display: none
