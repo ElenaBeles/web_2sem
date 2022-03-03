@@ -3,7 +3,8 @@ import styles from './index.module.sass';
 import {FC} from "react";
 import {IIcon} from "./index.interfaces";
 
-export const Icon: FC<IIcon> = ({ className, name, size = 24 }) => {
+export const Icon: FC<IIcon> = (props: IIcon) => {
+    const { className, name, size = 24 } = props
     return (
         <svg
             className={ className }

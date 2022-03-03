@@ -20,10 +20,16 @@ import second_slide from "../../assets/img/second_slide.svg";
 import third_slide from "../../assets/img/third_slide.svg";
 
 import cn from "classnames/bind";
-import classNames from "classnames/bind"; classNames();
+import classNames from "classnames/bind";
+import {Slide} from "../../component/ui/Slide"; classNames();
 
 const cx = cn.bind(styles);
 
+let colorsSlide: {color: string}[] = [
+    {"color": "green"},
+    {"color": "yellow"},
+    {"color": "blue"}
+]
 
 export const Home = () => {
     return (
@@ -34,54 +40,35 @@ export const Home = () => {
                     modules={[Navigation]}
                     spaceBetween={50}
                     slidesPerView={1}
+                    loop = { true }
                     navigation = { {
                         nextEl: '.swiper-button-next-u',
                         prevEl: '.swiper-button-prev-u',
                     }}
                 >
-                    <SwiperSlide className={ cx( {
-                        slide: true,
-                    })  }>
-                        <div className={ styles.slide__info }>
-                            <h1 className={ styles.slide__title }>
-                                Сделаем мир чище
-                            </h1>
-                            <p className={ styles.slide__text }>Сдай макулатуру или старую одежду и получи скидку<br/>на покупку товаров из переработанных материалов</p>
-                            <button className={ styles.slide__btn }>
-                                Условия сервиса
-                            </button>
-                        </div>
-                        <img className={ styles.slide__img } src={ first_slide } alt="Сделаем мир чище"/>
+                    <SwiperSlide>
+                        <Slide
+                            title={"Сделаем мир чище"}
+                            text={"Сдай макулатуру или старую одежду и получи скидку на покупку товаров из переработанных материалов"}
+                            btn_text={"Условия сервиса"}
+                            color = {colorsSlide[0].color}
+                            img={ first_slide }/>
                     </SwiperSlide>
-                    <SwiperSlide className={ cx( {
-                        slide: true,
-                        slide__2: true
-                    })  }>
-                        <div className={ styles.slide__info }>
-                            <h1 className={ styles.slide__title }>
-                                А вы знали...
-                            </h1>
-                            <p className={ styles.slide__text }>что среднее время разложения пластмассовых изделий колеблется от 400 до 700 лет,  а полиэтиленовых пакетов — от 100 до 200 лет? </p>
-                            <button className={ styles.slide__btn }>
-                                Узнать больше
-                            </button>
-                        </div>
-                        <img className={ styles.slide__img } src={ second_slide } alt="А вы знали..."/>
+                    <SwiperSlide>
+                        <Slide
+                            title={"А вы знали..."}
+                            text={"что среднее время разложения пластмассовых изделий колеблется от 400 до 700 лет,  а полиэтиленовых пакетов — от 100 до 200 лет? "}
+                            btn_text={"Узнать больше"}
+                            color = {colorsSlide[1].color}
+                            img={ second_slide }/>
                     </SwiperSlide>
-                    <SwiperSlide className={ cx( {
-                        slide: true,
-                        slide__3: true
-                    })  }>
-                        <div className={ styles.slide__info }>
-                            <h1 className={ styles.slide__title }>
-                                Что с масками?
-                            </h1>
-                            <p className={ styles.slide__text }>Медицинские маски не обязательно должны становиться отходами. Их тоже можно сдать на переработку.</p>
-                            <button className={ styles.slide__btn }>
-                                Пункты сбора масок
-                            </button>
-                        </div>
-                        <img className={ styles.slide__img } src={ third_slide } alt="Что с масками?"/>
+                    <SwiperSlide>
+                        <Slide
+                            title={"Что с масками?"}
+                            text={"Медицинские маски не обязательно должны становиться отходами. Их тоже можно сдать на переработку."}
+                            btn_text={"Пункты сбора масок"}
+                            color = {colorsSlide[2].color}
+                            img={ third_slide }/>
                     </SwiperSlide>
                 </Swiper>
                 <div className={ styles.slider__navigation }>

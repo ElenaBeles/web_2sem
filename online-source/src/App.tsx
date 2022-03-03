@@ -2,13 +2,15 @@ import React from 'react';
 import './App.sass';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {Home} from "./app/pages/Home";
+import {Header} from "./app/component/Header";
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path='/' caseSensitive element={<Home />}/>
-      </Routes>
+        <Header/>
+        <Routes>
+          <Route path='/' caseSensitive element={<Home />}/>
+        </Routes>
     </BrowserRouter>
   );
 }

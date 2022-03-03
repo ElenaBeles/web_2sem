@@ -8,7 +8,6 @@ export const LayoutContainer = (props: any) => {
 
     return(
         <div className = { styles.container }>
-            <Header/>
             <main>
                 { children }
             </main>

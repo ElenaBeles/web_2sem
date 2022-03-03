@@ -20,12 +20,12 @@ export const Header = (props: any) => {
                         Пункты сбора
                     </CustomLink>
                     <CustomLink
-                        to='/collection_points'
+                        to='/ecomarket'
                         className={ styles.link }>
                         ЭкоМаркет
                     </CustomLink>
                     <CustomLink
-                        to='/collection_points'
+                        to='/about_service'
                         className={ styles.link }>
                         О сервисе
                     </CustomLink>
