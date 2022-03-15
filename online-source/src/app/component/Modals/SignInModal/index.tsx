@@ -6,7 +6,7 @@ import { useStores } from "../../../utils/use-stores-hook";
 import { Button } from "../../ui/Button";
 import {SignInForm} from "../../Forms/SignInForm";
 import {SignInSmsModal} from "../SignInSmsModal";
-import {SignInOrganizationModal} from "../SignInOrganizationModal";
+import {SignUpOrganizationModal} from "../SignInOrganizationModal";
 
 export const SignInModal = observer(() => {
     const { modalStore: { setCurrentModal, clearCurrentModal }} = useStores();
@@ -18,7 +18,7 @@ export const SignInModal = observer(() => {
 
     const openSignInOrganizationModal = () => {
         clearCurrentModal()
-        setCurrentModal(SignInOrganizationModal)
+        setCurrentModal(SignUpOrganizationModal)
     }
 
     return(

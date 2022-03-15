@@ -5,7 +5,7 @@ import { useStores } from "../../../utils/use-stores-hook";
 import { Button } from "../../ui/Button";
 import { SignInSmsForm } from "../../Forms/SignInSmsForm";
 import { SignInModal } from "../SignInModal";
-import {SignInOrganizationModal} from "../SignInOrganizationModal";
+import {SignUpOrganizationModal} from "../SignInOrganizationModal";
 
 export const SignInSmsModal = observer(() => {
     const { modalStore: { setCurrentModal,clearCurrentModal }} = useStores();
@@ -17,7 +17,7 @@ export const SignInSmsModal = observer(() => {
 
     const openSignInOrganizationModal = () => {
         clearCurrentModal()
-        setCurrentModal(SignInOrganizationModal)
+        setCurrentModal(SignUpOrganizationModal)
     }
     return(
         <div className={ styles.overlay }>
