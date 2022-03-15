@@ -1,0 +1,47 @@
+@import "../../../styles/mixins.sass"
+
+.overlay
+  position: fixed
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  background-color: rgba(#353535, 0.6)
+  width: 100%
+  height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 10
+
+.wrapper
+  width: 480px
+
+  color: #FFFFFF
+  background-color: #FFFFFF
+
+.form
+  &__wrapper
+    box-sizing: border-box
+    max-width: 384px
+
+    display: flex
+    flex-direction: column
+  &__btn
+    margin-top: 32px
+    padding: 16px 0
+    width: 100%
+  &__input
+    padding: 20px 16px
+  &__links
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+
+    margin-top: 16px
+  &__link
+    font-weight: 400
+    font-size: 16px
+    line-height: 20px
+    color: $c-green
+

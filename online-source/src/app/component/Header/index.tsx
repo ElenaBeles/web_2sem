@@ -3,12 +3,24 @@ import styles from './index.module.sass';
 import {CustomLink} from "../ui/СustomLink";
 import {Icon} from "../ui/Icon";
 import logo from "../../assets/img/logo.svg"
-export const Header = (props: any) => {
+import {observer} from "mobx-react";
+import {useStores} from "../../utils/use-stores-hook";
+import {SignInModal} from "../Modals/SignInModal";
+import {Link} from "react-router-dom";
+export const Header = observer ((props: any) => {
+    const { modalStore: { setCurrentModal } } = useStores();
+
+    const openModal = () => {
+        setCurrentModal(SignInModal);
+    }
+
     return(
-        <div className={ styles.header__wrapper}>
+        <header className={ styles.header__wrapper}>
             <div className={ styles.header }>
                 <nav>
-                    <img className={ styles.logo } src = { logo } alt={ logo }/>
+                    <Link to = { "/" }>
+                        <img className={ styles.logo } src = { logo } alt={ logo }/>
+                    </Link>
                     <CustomLink
                         to='/'
                         className={ styles.link }>
@@ -36,12 +48,12 @@ export const Header = (props: any) => {
                         <Icon name='location'/>
                         <a className={ styles.header__button__link }>Казань</a>
                     </button>
-                    <button className={ styles.header__button }>
+                    <button className={ styles.header__button } onClick={ openModal }>
                         <Icon name='exit'/>
                         <a className={ styles.header__button__link }>Войти</a>
                     </button>
                 </div>
             </div>
-        </div>
+        </header>
     )
-}
+})
