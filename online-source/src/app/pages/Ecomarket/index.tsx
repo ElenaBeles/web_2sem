@@ -19,10 +19,17 @@ const allCategories: IItem[] = [
     { name: "Аксессуары", checked: false },
 ]
 
-export const Ecomarket = observer(() => {
+const allSortings: IItem[] = [
+    { name: "По популярности", checked: false },
+    { name: "По цене", checked: false },
+    { name: "По новизне", checked: false },
+]
 
+export const Ecomarket = observer(() => {
     const [categories, setCategories] = useState(allCategories)
     const [genders, setGenders] = useState(allGender)
+    const [sortings, setSorting] = useState(allSortings)
+
     const [allItemsCategories, setAllItemsCategories] = useState(false)
     const updateCheckStatus = (index: number, setItems: any, items: IItem[]) => {
         setItems(
@@ -41,6 +48,16 @@ export const Ecomarket = observer(() => {
             )
         )
     }
+
+
+    const handleClickSort = ( index: number ) => {
+        setSorting(sortings.map((sorting: IItem, currentIndex: number) => currentIndex === index ?
+            {...sorting, checked: true}
+            : {...sorting, checked: false}))
+
+    }
+
+
     return (
         <LayoutContainer>
             <div className={ styles.wrapper }>
@@ -49,20 +66,18 @@ export const Ecomarket = observer(() => {
                         Экомаркет
                     </h1>
                     <div>
-                        <Button
-                            text={"По популярности"}
-                            type={"button"}
-                            status={"tertiary"}/>
-                        <Button
-                            text={"По цене"}
-                            type={"button"}
-                            status={"tertiary"}
-                            disabled={true}/>
-                        <Button
-                            text={"По новизне"}
-                            type={"button"}
-                            status={"tertiary"}
-                            disabled={true}/>
+                        { sortings.map((sorting, index) => (
+                            <Button
+                                text={ sorting.name }
+                                type={"button"}
+                                status={"tertiary"}
+                                isActive={ sorting.checked }
+                                onClick={() => {
+                                    handleClickSort(index)
+                                    console.log( sorting.checked )
+                                }}/>
+                        ))
+                        }
                     </div>
                 </div>
                 <div className={ styles.goods }>
@@ -71,7 +86,7 @@ export const Ecomarket = observer(() => {
                             <h3 className={ styles.goods__title }>
                                 Пол
                             </h3>
-                            {genders.map((gender, index) => (
+                            { genders.map((gender, index) => (
                                 <Checkbox
                                     className = { styles.checkboxes }
                                     isChecked={gender.checked}
@@ -90,7 +105,7 @@ export const Ecomarket = observer(() => {
                                 checkHandler={() => updateCheckStatusAll( allItemsCategories, setAllItemsCategories,setCategories, categories)}
                                 text={ "Выбрать всё"}
                             />
-                            {categories.map((category, index) => (
+                            { categories.map((category, index) => (
                                 <Checkbox
                                     className = { styles.checkboxes }
                                     isChecked={category.checked}

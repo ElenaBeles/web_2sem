@@ -1,15 +1,20 @@
 @import "../../../styles/mixins.sass"
 .secondary, .primary
   border-radius: 8px
+  &:disabled
+    background: rgba(#3E507214, 0.08)
+    color: rgba(#000B26CC, 0.8)
 
 .tertiary
   border-radius: 61px
   padding: 10px 20px
-  background: rgba($c-main, 0.88)
-  color: #FFFFFF
-  &:disabled
-    background: rgba(#3E507214, 0.08)
-    color: rgba($c-main, 0.88)
+  background: rgba(#3E507214, 0.08)
+  color: rgba($c-main, 0.88)
+  &.active
+    background: rgba($c-main, 0.88)
+    color: #FFFFFF
+
+
 
 .size
   &_10
