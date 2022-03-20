@@ -5,6 +5,7 @@ import {Home} from "./app/pages/Home";
 import {Header} from "./app/component/Header";
 import mainStore from "./app/stores/MainStore";
 import { Provider } from 'mobx-react';
+import {Ecomarket} from "./app/pages/Ecomarket";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
             <Header/>
             <Routes>
                 <Route path='/' caseSensitive element={<Home />}/>
+                <Route path='/ecomarket' caseSensitive element={<Ecomarket />}/>
             </Routes>
         </Provider>
     </BrowserRouter>

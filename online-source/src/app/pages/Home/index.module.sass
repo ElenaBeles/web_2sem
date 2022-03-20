@@ -1,6 +1,5 @@
 @import "../../styles/mixins.sass"
 
-
 button
   padding: 0
   border: none
@@ -13,8 +12,19 @@ body
   padding: 0
   margin: 0
 
+.wrapper
+  max-width: 1200px
+  min-width: 900px
+  width: 100%
+  &__extended
+    max-width: 1244px
+    min-width: 944px
+    width: 100%
+
 .slider
-  width: 1200px
+  min-width: 900px
+  max-width: 1200px
+  width: 100vw
   height: 320px
   &__navigation
     display: flex
@@ -30,6 +40,9 @@ body
   display: flex
   flex-direction: row
   justify-content: space-between
+  width: 100vw
+  max-width: 1200px
+  min-width: 984px
 
   margin: 48px 0 108px 0
 

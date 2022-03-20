@@ -6,7 +6,6 @@ import logo from "../../assets/img/logo.svg"
 import {observer} from "mobx-react";
 import {useStores} from "../../utils/use-stores-hook";
 import {SignInModal} from "../Modals/SignInModal";
-import {Link} from "react-router-dom";
 export const Header = observer ((props: any) => {
     const { modalStore: { setCurrentModal } } = useStores();
 
@@ -18,9 +17,7 @@ export const Header = observer ((props: any) => {
         <header className={ styles.header__wrapper}>
             <div className={ styles.header }>
                 <nav>
-                    <Link to = { "/" }>
-                        <img className={ styles.logo } src = { logo } alt={ logo }/>
-                    </Link>
+                    <img className={ styles.logo } src = { logo } alt={ logo }/>
                     <CustomLink
                         to='/'
                         className={ styles.link }>

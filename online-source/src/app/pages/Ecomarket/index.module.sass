@@ -1,0 +1,40 @@
+@import "../../styles/mixins.sass"
+
+.wrapper
+  max-width: 1200px
+  min-width: 800px
+  width: 75vw
+.title
+  &__info
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    width: 100%
+
+.goods
+  display: flex
+  justify-content: space-between
+
+  margin-bottom: 40px
+  &__wrapper
+    border: 1px solid rgba(#3E507228, 0.16)
+    width: 23.5vw
+    max-width: 282px
+    min-width: 158px
+    height: 545px
+    border-radius: 16px
+  &__filtration
+    margin: 23px 24px
+    width: 100%
+
+  &__items
+    margin-left: 47px
+    background-color: $c-main
+    width: 54vw
+    max-width: 871px
+    min-width: 486px
+
+.checkboxes
+  &:not(:first-child)
+    margin-top: 12px

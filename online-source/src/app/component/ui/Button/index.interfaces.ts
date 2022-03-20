@@ -5,4 +5,5 @@ export interface IButton {
     disabled?: any;
     className?: string;
     status?: string;
+    padding?: string
 }

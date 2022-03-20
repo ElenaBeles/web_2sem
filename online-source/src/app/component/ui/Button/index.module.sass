@@ -1,12 +1,28 @@
+@import "../../../styles/mixins.sass"
 .secondary, .primary
   border-radius: 8px
-  padding-top: 16px
-  padding-bottom: 16px
+
+.tertiary
+  border-radius: 61px
+  padding: 10px 20px
+  background: rgba($c-main, 0.88)
+  color: #FFFFFF
+  &:disabled
+    background: rgba(#3E507214, 0.08)
+    color: rgba($c-main, 0.88)
+
+.size
+  &_10
+    padding: 10px 24px
+  &_12
+    padding: 12px 24px
+  &_16
+    padding: 16px 24px
 
 .primary
-  background: #07C88E
+  background: $c-green
   color: #FFFFFF
 
 .secondary
   background: rgba(62, 80, 114, 0.08)
-  color: #000B26CC
+  color: $c-main
