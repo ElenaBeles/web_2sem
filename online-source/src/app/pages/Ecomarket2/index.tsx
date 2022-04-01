@@ -7,6 +7,7 @@ import {useState} from "react";
 import {useStores} from "../../utils/use-stores-hook";
 import {CommodityCard} from "../../component/ui/CommodityCard";
 import {Cost} from "../../component/ui/Cost";
+import {CheckboxGroup} from "../../component/ui/Checkbox-group";
 
 interface IItem {
     name: string;
@@ -27,7 +28,7 @@ const allSortings: IItem[] = [
     { name: "По новизне", checked: false },
 ]
 
-export const Ecomarket = observer(() => {
+export const Ecomarket2 = observer(() => {
     const { commoditiesStore: { commodities } } = useStores();
 
     let filterData = commodities;
@@ -103,22 +104,18 @@ export const Ecomarket = observer(() => {
                             <h3 className={ styles.goods__title }>
                                 Тип товара
                             </h3>
-                            <Checkbox
-                                className = { styles.checkboxes }
-                                isChecked={ allItemsCategories }
-                                checkHandler={() => updateCheckStatusAll( allItemsCategories, setAllItemsCategories,setCategories, categories)}
-                                text={ "Выбрать всё"}
-                            />
-                            { categories.map((category, index) => (
-                                <Checkbox
-                                    className = { styles.checkboxes }
-                                    isChecked={category.checked}
-                                    checkHandler={() => updateCheckStatus(index, setCategories, categories)}
-                                    text={category.name}
-                                    index={index}
-                                />
-                            ))
-                            }
+                            <CheckboxGroup>
+                                { categories.map((category, index) => (
+                                    <Checkbox
+                                        className = { styles.checkboxes }
+                                        isChecked={category.checked}
+                                        checkHandler={() => updateCheckStatus(index, setCategories, categories)}
+                                        text={category.name}
+                                        index={index}
+                                    />
+                                ))
+                                }
+                            </CheckboxGroup>
                         </div>
                     </div>
                     <div className={ styles.goods__items }>

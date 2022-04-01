@@ -1,5 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs/><symbol id="btn_close" viewBox="0 0 32 32">
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
+<linearGradient id="paint0_linear_4049_408" x1="-0.0331467" y1="-3.74999" x2="17.6933" y2="27.796" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00D5C7"/>
+<stop offset="1" stop-color="#FFEE57"/>
+</linearGradient>
+</defs><symbol id="btn_close" viewBox="0 0 32 32">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M24.7071 8.70711C25.0976 8.31658 25.0976 7.68342 24.7071 7.29289C24.3166 6.90237 23.6834 6.90237 23.2929 7.29289L16 14.5858L8.70711 7.29289C8.31658 6.90237 7.68342 6.90237 7.29289 7.29289C6.90237 7.68342 6.90237 8.31658 7.29289 8.70711L14.5858 16L7.29289 23.2929C6.90237 23.6834 6.90237 24.3166 7.29289 24.7071C7.68342 25.0976 8.31658 25.0976 8.70711 24.7071L16 17.4142L23.2929 24.7071C23.6834 25.0976 24.3166 25.0976 24.7071 24.7071C25.0976 24.3166 25.0976 23.6834 24.7071 23.2929L17.4142 16L24.7071 8.70711Z" fill="#000B26" fill-opacity="0.72"/>
+</symbol><symbol id="cost" viewBox="0 0 25 24">
+<rect x="0.333496" width="24" height="24" rx="12" fill="url(#paint0_linear_4049_408)"/>
+<path d="M8.3335 18H16.3335V16.1777H10.5484V12.9023H15.8738V11.0801H10.5484V7.82227H16.2857V6H8.3335V18Z" fill="white"/>
+<rect x="11.3335" y="4" width="2" height="2" fill="white"/>
+<rect x="11.3335" y="18" width="2" height="2" fill="white"/>
+
 </symbol><symbol id="email" viewBox="0 0 20 16">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M3 1.5H17C17.6497 1.5 18.203 1.91311 18.4114 2.49099L11.2481 7.26656C10.4923 7.77041 9.5077 7.77041 8.75192 7.26656L1.58857 2.49099C1.79701 1.91311 2.35026 1.5 3 1.5ZM1.5 4.23472V13C1.5 13.8284 2.17157 14.5 3 14.5H17C17.8284 14.5 18.5 13.8284 18.5 13V4.23472L12.0801 8.51464C10.8205 9.35439 9.1795 9.35439 7.91987 8.51464L1.5 4.23472ZM0 3C0 1.34315 1.34315 0 3 0H17C18.6569 0 20 1.34315 20 3V13C20 14.6569 18.6569 16 17 16H3C1.34315 16 0 14.6569 0 13V3Z" fill="#000B26" fill-opacity="0.32"/>
 </symbol><symbol id="exit" viewBox="0 0 24 24">
