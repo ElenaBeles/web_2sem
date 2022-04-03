@@ -22,7 +22,8 @@ import third_slide from "../../assets/img/third_slide.svg";
 import classNames from "classnames/bind";
 import {Slide} from "../../component/ui/Slide";
 import {observer} from "mobx-react";
-import {Card} from "../../component/ui/Card"; classNames();
+import {Card} from "../../component/ui/Card";
+import {useStores} from "../../utils/use-stores-hook"; classNames();
 
 let colorsSlide: {color: string}[] = [
     {"color": "green"},

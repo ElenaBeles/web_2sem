@@ -5,7 +5,8 @@ import {Home} from "./app/pages/Home";
 import {Header} from "./app/component/Header";
 import mainStore from "./app/stores/MainStore";
 import { Provider } from 'mobx-react';
-import {Ecomarket2} from "./app/pages/Ecomarket2";
+import {Ecomarket} from "./app/pages/Ecomarket";
+import {CollectionPoints} from "./app/pages/CollectionPoints";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
             <Header/>
             <Routes>
                 <Route path='/' caseSensitive element={<Home />}/>
-                <Route path='/ecomarket' caseSensitive element={<Ecomarket2 />}/>
+                <Route path='/ecomarket' caseSensitive element={<Ecomarket />}/>
+                <Route path='/collection_points' caseSensitive element={<CollectionPoints />}/>
             </Routes>
         </Provider>
     </BrowserRouter>

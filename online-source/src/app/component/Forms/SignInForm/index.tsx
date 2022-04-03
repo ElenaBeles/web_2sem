@@ -3,30 +3,44 @@ import BasicFormSchema from "../BasicFormSchema";
 import {Button} from "../../ui/Button";
 
 import styles from './index.module.sass';
+import {useStores} from "../../../utils/use-stores-hook";
+import {UserModel} from "../../../models/UserModel";
 
 export const SignInForm = (props:any) => {
+    const { usersStore: { login } } = useStores();
+
+    const signIn = (values: any) => {
+        const user:UserModel = {
+            username: values.username,
+            password: values.password,
+        }
+        login(user)
+    }
+
     return (
         <div>
             <Formik
                 initialValues = {{
                     phone: '',
                     password: '',
+                    username: '',
+                    email: ''
                 }}
                 validationSchema={ BasicFormSchema }
-                onSubmit = {
-                    (values: any) => console.log(values)
-                }>
+                onSubmit = {(values => {
+                    signIn(values)
+                })}>
                 {({errors, touched}) => (
                     <Form className = { styles.form__wrapper }>
                         <Field
-                            name = "phone"
+                            name = "username"
                             type = "text"
-                            placeholder = "Телефон"
+                            placeholder = "Логин"
                             className = { styles.form__field }
                         />
-                        { errors.phone &&
-                        touched.phone && <p className={ styles.error }>
-                            { errors.phone }
+                        { errors.username &&
+                        touched.username && <p className={ styles.error }>
+                            { errors.username }
                         </p>}
                         <Field
                             name = "password"

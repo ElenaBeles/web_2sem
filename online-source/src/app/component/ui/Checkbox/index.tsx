@@ -15,7 +15,7 @@ export const Checkbox: FC<ICheckbox> = (props: ICheckbox) => {
             <input type="checkbox"
                    id={`checkbox-${index}`}
                    checked={isChecked}
-                   onChange={checkHandler}
+                   onChange={ checkHandler }
                    className={ styles.checkbox }
             />
             <label className={ styles.checkbox__title }

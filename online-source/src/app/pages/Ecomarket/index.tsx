@@ -7,6 +7,7 @@ import {useState} from "react";
 import {useStores} from "../../utils/use-stores-hook";
 import {CommodityCard} from "../../component/ui/CommodityCard";
 import {Cost} from "../../component/ui/Cost";
+import {CheckboxGroup} from "../../component/ui/Checkbox-group";
 
 interface IItem {
     name: string;
@@ -103,11 +104,8 @@ export const Ecomarket = observer(() => {
                             <h3 className={ styles.goods__title }>
                                 Тип товара
                             </h3>
-                            <Checkbox
+                            <CheckboxGroup
                                 className = { styles.checkboxes }
-                                isChecked={ allItemsCategories }
-                                checkHandler={() => updateCheckStatusAll( allItemsCategories, setAllItemsCategories,setCategories, categories)}
-                                text={ "Выбрать всё"}
                             />
                             { categories.map((category, index) => (
                                 <Checkbox
@@ -131,8 +129,7 @@ export const Ecomarket = observer(() => {
                             <Button className={ styles.balance__card__btn } text={"Получить промокод"} type={"button"} padding={"10"}/>
 
                         </div>
-                        { filterData.map((commodity, index) => (
-                            <CommodityCard
+                        { filterData.map((commodity, index) => (                            <CommodityCard
                                 title = { commodity.title }
                                 category={ commodity.category}
                                 cost={ commodity.cost }
