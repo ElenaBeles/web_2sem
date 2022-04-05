@@ -1,3 +1,41 @@
+@import "/src/app/styles/mixins"
+
 .wrapper
-  width: 500px
-  height: 500px
+  margin: 0 auto
+  max-width: 1200px
+  min-width: 800px
+  width: 75vw
+  z-index: 2
+  &__map
+    position: absolute
+    z-index: -1
+  &__filter
+    margin-top: 32px
+    display: flex
+    column-gap: 20px
+
+.addresses
+  &__wrapper
+    display: flex
+    flex-direction: column
+    row-gap: 8px
+    width: 24vw
+    max-width: 384px
+    min-width: 324px
+    margin-top: 32px
+
+.select
+  width: 23%
+  background: #FFFFFF
+
+  box-shadow: 0 2px 8px rgba(#152D671E, 0.12)
+  border-radius: 8px
+  padding: 14px 20px
+  border: none
+
+
+.filter
+  flex-grow: 1
+  width: 30%
+
+

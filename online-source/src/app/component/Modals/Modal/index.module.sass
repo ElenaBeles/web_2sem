@@ -16,10 +16,15 @@
   z-index: 10
 
 .wrapper
-  margin: 214px 560px
+  margin: 0 auto
   background-color: white
   border-radius: 24px
   padding: 48px
+  overflow-y: auto
+  max-height: 75%
+  scrollbar-width: none
+  &::-webkit-scrollbar
+    width: 0
 
 .modal
   &__title
@@ -32,6 +37,7 @@
     &__wrapper
       display: flex
       flex-direction: row
+
 
 .mainInfo
   &__wrapper

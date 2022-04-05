@@ -1,33 +1,18 @@
 import {useStores} from "../../../utils/use-stores-hook";
 import {UserModel} from "../../../models/UserModel";
 import {Field, Form, Formik} from "formik";
-import BasicFormSchema from "../BasicFormSchema";
 import styles from "../SignInForm/index.module.sass";
 import {Button} from "../../ui/Button";
-
-const formItems = [
-    { name: "username", type: "text", placeholder: "Придумайте логин"},
-    { name: "phone_number", type: "text", placeholder: "Телефон"},
-    { name: "email", type: "email", placeholder: "Почта"},
-    { name: "password", type: "password", placeholder: "Пароль"},
-]
-
-interface FormItems {
-    name: string,
-    type: 'text'|'email'|'password',
-    placeholder: string
-}
+import SignUpSchema from "../Schems/SignUpSchema";
 
 export const SignUpForm = (props:any) => {
     const { usersStore: { register } } = useStores();
 
-    const signUp = (values: any) => {
+    const signUp = (phone: string, password: string) => {
         const user:UserModel = {
             role: 'USER',
-            username: values.username,
-            phone_number: values.phone,
-            password: values.password,
-            email: values.email
+            phone_number: phone,
+            password: password,
         }
         register(user)
     }
@@ -37,30 +22,38 @@ export const SignUpForm = (props:any) => {
         <div>
             <Formik
                 initialValues = {{
-                    phone: '',
+                    phone_number: '',
                     password: '',
-                    username: '',
-                    email: ''
                 }}
-                validationSchema={ BasicFormSchema }
-                onSubmit = {(values => {
-                    signUp(values)
-                })}>
+                validationSchema={ SignUpSchema }
+                onSubmit = { (values => signUp(values.phone_number, values.password))}>
                 {({errors, touched}) => (
                     <Form className = { styles.form__wrapper }>
-                        { formItems.map((field, index) => (
-                            <Field
-                                name = { field.name }
-                                type = { field.type }
-                                placeholder = { field.placeholder }
-                                className = { styles.form__field }
-                            />
-                        ))
-                        }
+                        <Field
+                            name = "phone_number"
+                            type = "text"
+                            placeholder = "Телефон"
+                            className = { styles.form__field }
+                        />
+                        { errors.phone_number &&
+                        touched.phone_number && <p className={ styles.error }>
+                            { errors.phone_number }
+                        </p>}
+                        <Field
+                            name = "password"
+                            type = "password"
+                            placeholder = "Пароль"
+                            className = { styles.form__field }
+                        />
+                        { errors.password &&
+                        touched.password && <p className={ styles.error }>
+                            { errors.password }
+                        </p>}
                         <Button
                             type={"submit"}
                             text={"Войти"}
                             className = { styles.form__btn }
+                            isDisabled={ !!(errors.password && errors.password) }
                         />
                     </Form>)}
             </Formik>

@@ -9,6 +9,7 @@ export class UsersStore {
         makeAutoObservable(this)
     }
 
+
     register = (user: UserModel) => {
         const data = {
             login: user.username,
@@ -16,7 +17,6 @@ export class UsersStore {
             email: user.email,
             phone_number: user.phone_number
         }
-
         axios.post('https://ecoapp.cloud.technokratos.com/eco-rus/api/v1/account', data)
             .then((res: any) => {
                 console.log(res)
@@ -28,7 +28,7 @@ export class UsersStore {
 
     login = (user: UserModel) => {
         const data = {
-            phone_number: user.phone_number,
+            login: user.login,
             password: user.password
         }
 

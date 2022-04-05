@@ -1,7 +1,6 @@
-import {useEffect} from "react";
 import axios from "axios";
-
 axios.defaults.baseURL = 'https://ecoapp.cloud.technokratos.com/eco-rus/api/v1/'
+
 
 axios.interceptors.request.use(({...config}) => {
     const token = window.localStorage.getItem("token");

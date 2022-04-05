@@ -7,5 +7,6 @@ export interface UserModel {
     firstname?: string;
     lastname?: string;
     balance?: number;
+    login?: string;
     role?: 'ADMIN'|'USER'|'POINT'|'SHOP';
 }

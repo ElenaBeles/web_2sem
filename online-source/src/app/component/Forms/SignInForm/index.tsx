@@ -1,46 +1,44 @@
 import {Form, Formik, Field} from 'formik';
-import BasicFormSchema from "../BasicFormSchema";
-import {Button} from "../../ui/Button";
-
 import styles from './index.module.sass';
 import {useStores} from "../../../utils/use-stores-hook";
 import {UserModel} from "../../../models/UserModel";
+import {Button} from "../../ui/Button";
+import SignInSchema from "../Schems/SignInSchema";
 
 export const SignInForm = (props:any) => {
     const { usersStore: { login } } = useStores();
 
     const signIn = (values: any) => {
         const user:UserModel = {
-            username: values.username,
+            login: values.phone_number,
             password: values.password,
         }
         login(user)
     }
-
+    
+    
     return (
         <div>
             <Formik
                 initialValues = {{
-                    phone: '',
+                    phone_number: '',
                     password: '',
-                    username: '',
-                    email: ''
                 }}
-                validationSchema={ BasicFormSchema }
+                validationSchema={ SignInSchema }
                 onSubmit = {(values => {
                     signIn(values)
                 })}>
                 {({errors, touched}) => (
                     <Form className = { styles.form__wrapper }>
                         <Field
-                            name = "username"
+                            name = "phone_number"
                             type = "text"
-                            placeholder = "Логин"
+                            placeholder = "Телефон"
                             className = { styles.form__field }
                         />
-                        { errors.username &&
-                        touched.username && <p className={ styles.error }>
-                            { errors.username }
+                        { errors.phone_number &&
+                        touched.phone_number && <p className={ styles.error }>
+                            { errors.phone_number }
                         </p>}
                         <Field
                             name = "password"
@@ -54,8 +52,9 @@ export const SignInForm = (props:any) => {
                         </p>}
                         <Button
                             type={"submit"}
-                            text={"Войти"}
                             className = { styles.form__btn }
+                            text={"Войти"}
+                            isDisabled={ !!(errors.password && errors.password)}
                         />
                     </Form>)}
             </Formik>

@@ -7,6 +7,7 @@ import { Button } from "../../ui/Button";
 import {SignInForm} from "../../Forms/SignInForm";
 import {SignInSmsModal} from "../SignInSmsModal";
 import {SignInOrganizationModal} from "../SignInOrganizationModal";
+import {SignUpModal} from "../SignUpModal";
 
 export const SignInModal = observer(() => {
     const { modalStore: { setCurrentModal, clearCurrentModal }} = useStores();
@@ -19,6 +20,11 @@ export const SignInModal = observer(() => {
     const openSignInOrganizationModal = () => {
         clearCurrentModal()
         setCurrentModal(SignInOrganizationModal)
+    }
+
+    const openSignUpModal = () => {
+        clearCurrentModal()
+        setCurrentModal(SignUpModal)
     }
 
     return(
@@ -35,7 +41,7 @@ export const SignInModal = observer(() => {
                           </button>
                           <button
                               className={ styles.form__link}
-                              onClick={ openSignInSmsModal }>
+                              onClick={ openSignUpModal }>
                               Регистрация
                           </button>
                       </div>
