@@ -8,6 +8,7 @@ import {useStores} from "../../utils/use-stores-hook";
 import {CommodityCard} from "../../component/ui/CommodityCard";
 import {Cost} from "../../component/ui/Cost";
 import {CheckboxGroup} from "../../component/ui/Checkbox-group";
+import {isAction} from "mobx";
 
 interface IItem {
     name: string;
@@ -30,6 +31,7 @@ const allSortings: IItem[] = [
 
 export const Ecomarket = observer(() => {
     const { commoditiesStore: { commodities } } = useStores();
+    const [ isOpenFilters, setIsOpenFilters ] = useState(false);
 
     let filterData = commodities;
 
@@ -66,11 +68,20 @@ export const Ecomarket = observer(() => {
     return (
         <LayoutContainer>
             <div className={ styles.wrapper }>
-                <div className={ styles.title__info}>
+                <div className={ isOpenFilters ? styles.wrapper__mobile__active : styles.wrapper__mobile }>
+                </div>
+                <div className={ styles.title__info }>
                     <h1 className={ styles.title}>
                         Экомаркет
                     </h1>
-                    <div>
+                    <Button
+                        className={ styles.btn__filters }
+                        text={ "Фильтры" }
+                        type={"button"}
+                        status={"tertiary"}
+                        onClick={() => setIsOpenFilters(!isOpenFilters)}
+                        />
+                    <div className={ isOpenFilters ? styles.btn__filters__items__mobile : styles.btn__filters__items } >
                         { sortings.map((sorting, index) => (
                             <Button
                                 text={ sorting.name }
@@ -86,8 +97,8 @@ export const Ecomarket = observer(() => {
                     </div>
                 </div>
                 <div className={ styles.goods }>
-                    <div className={ styles.goods__wrapper }>
-                        <div className={ styles.goods__filtration }>
+                    <div className={ isOpenFilters ?styles.goods__wrapper__mobile : styles.goods__wrapper }>
+                        <div className={ isOpenFilters ? styles.goods__filtration__mobile : styles.goods__filtration }>
                             <h3 className={ styles.goods__title }>
                                 Пол
                             </h3>
@@ -120,16 +131,8 @@ export const Ecomarket = observer(() => {
                         </div>
                     </div>
                     <div className={ styles.goods__items }>
-                        <div className={ styles.balance__card__wrapper }>
-                            <div className={ styles.balance__card__cost }>
-                                <p className={ styles.balance__card__cost__text }>На вашем балансе</p>
-                               <Cost cost={ 200 } size = { "16" }/>
-                            </div>
-                            <p className={ styles.balance__card__text } >Вы можете обменять их на скидку 200 руб.</p>
-                            <Button className={ styles.balance__card__btn } text={"Получить промокод"} type={"button"} padding={"10"}/>
-
-                        </div>
-                        { filterData.map((commodity, index) => (                            <CommodityCard
+                        { filterData.map((commodity, index) => (
+                            <CommodityCard
                                 title = { commodity.title }
                                 category={ commodity.category}
                                 cost={ commodity.cost }

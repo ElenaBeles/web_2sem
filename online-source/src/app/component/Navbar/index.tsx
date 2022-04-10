@@ -9,16 +9,20 @@ import {useStores} from "../../utils/use-stores-hook";
 import {SignInModal} from "../Modals/SignInModal";
 import {ButtonWithIcon} from "../ui/ButtonWithIcon";
 import {Link} from "react-router-dom";
+import {DomEvent} from "leaflet";
 
+interface Props{
+    handleHeader: (e: any) => void;
+    isActive: boolean
+}
 
-export const Navbar: FC = () => {
+export const Navbar: FC<Props> = (props: Props) => {
+    const { handleHeader, isActive = false } = props;
     const { modalStore: { setCurrentModal } } = useStores();
 
     const openModal = () => {
         setCurrentModal(SignInModal);
     }
-
-    const [isActive, setIsActive] = useState(false);
     return(
         <div className={ isActive ? styles.mobile__wrapper : styles.wrapper }>
             <Link to={'/'} className={ isActive ? styles.mobile__logo: styles.logo }>
@@ -29,7 +33,7 @@ export const Navbar: FC = () => {
             <Button
                 status={'usually'}
                 type={"button"}
-                onClick={ () => setIsActive(!isActive) }
+                onClick={ handleHeader }
                 className={ styles.burger__btn }
             >
                 <Icon name={ isActive ? "close" : "menu"}/>
