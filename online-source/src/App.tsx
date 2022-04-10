@@ -7,6 +7,7 @@ import mainStore from "./app/stores/MainStore";
 import { Provider } from 'mobx-react';
 import {Ecomarket} from "./app/pages/Ecomarket";
 import {CollectionPoints} from "./app/pages/CollectionPoints";
+import {Profile} from "./app/pages/Profile";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
                 <Route path='/' caseSensitive element={<Home />}/>
                 <Route path='/ecomarket' caseSensitive element={<Ecomarket />}/>
                 <Route path='/collection_points' caseSensitive element={<CollectionPoints />}/>
+                <Route path='/profile' caseSensitive element={<Profile />}/>
             </Routes>
         </Provider>
     </BrowserRouter>
