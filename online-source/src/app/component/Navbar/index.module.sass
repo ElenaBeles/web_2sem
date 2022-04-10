@@ -1,0 +1,62 @@
+.wrapper
+  width: 100%
+  height: 64px
+  display: flex
+  flex-direction: row
+  align-items: center
+  &__nav
+    display: flex
+    justify-content: space-between
+    width: 100%
+
+.actions
+  display: flex
+  flex-direction: row
+  column-gap: 48px
+
+.navbar
+  display: flex
+  flex-direction: row
+  &__links
+    margin-left: 48px
+    display: flex
+    flex-direction: row
+    column-gap: 24px
+
+@media only screen and (min-width: 798px)
+  .burger
+    &__btn
+      display: none
+
+@media only screen and (max-width: 798px)
+  .navbar__links, .actions
+    display: none
+  .wrapper
+    margin: 0 16px
+    display: flex
+    justify-content: space-between
+    &__nav
+      display: none
+  .mobile
+    &__logo
+      display: none
+    &__wrapper
+      position: absolute
+      z-index: 2
+      width: 100vw
+      height: 100vh
+      background-color: white
+      &__navbar
+        display: flex
+        flex-direction: column
+        margin-left: 20px
+      &__nav
+        display: flex
+        flex-direction: column
+        column-gap: 32px
+    &__actions
+      display: none
+
+
+
+

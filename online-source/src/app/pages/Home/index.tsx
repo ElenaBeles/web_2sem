@@ -23,7 +23,8 @@ import classNames from "classnames/bind";
 import {Slide} from "../../component/ui/Slide";
 import {observer} from "mobx-react";
 import {Card} from "../../component/ui/Card";
-import {useStores} from "../../utils/use-stores-hook"; classNames();
+import {useStores} from "../../utils/use-stores-hook";
+import {Navbar} from "../../component/Navbar"; classNames();
 
 let colorsSlide: {color: string}[] = [
     {"color": "green"},

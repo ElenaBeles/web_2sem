@@ -8,7 +8,7 @@ const cx = cn.bind(styles);
 
 
 export const Button = (props: IButton) => {
-    const { text, isDisabled, onClick, className, type, status = "primary", padding = '16', isActive } = props;
+    const { text, isDisabled, onClick, className, type, status = "primary", padding = '16', isActive, children } = props;
 
     return(
         <button
@@ -17,6 +17,7 @@ export const Button = (props: IButton) => {
                 primary: status === 'primary',
                 secondary: status === 'secondary',
                 tertiary: status === 'tertiary',
+                usually: status === 'usually',
                 size_10: padding === '10',
                 size_12: padding === '12',
                 size_16: padding === '16',
@@ -26,6 +27,7 @@ export const Button = (props: IButton) => {
             type = { type }
         >
             { text }
+            { children }
         </button>
     )
 }
