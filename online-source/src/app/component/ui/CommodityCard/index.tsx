@@ -7,13 +7,13 @@ export const CommodityCard: FC<ICommodityCard> = (props: ICommodityCard) => {
     const { title, category, cost, posterImg, brand } = props
     return (
         <div className={ styles.card__wrapper }>
+            <div className={ styles.card__brand__wrapper }>
+                <p className={ styles.card__brand }>{ brand }</p>
+            </div>
             <img src={ posterImg } alt=""/>
             <p className={ styles.card__title }>{ title }</p>
             <p className={ styles.card__category }>{ category }</p>
             <Cost cost={ cost}/>
-            <div className={ styles.card__brand__wrapper }>
-                <p className={ styles.card__brand }>{ brand }</p>
-            </div>
         </div>
     );
 }

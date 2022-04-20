@@ -2,8 +2,6 @@
 
 .wrapper
   max-width: 1200px
-  min-width: 800px
-  width: 75vw
 .title
   &__info
     display: flex
@@ -31,13 +29,11 @@
   &__items
     margin-left: 47px
     max-width: 871px
-    min-width: 486px
-
     margin-top: 44px
-    display: grid
+    display: flex
+    flex-wrap: wrap
     gap: 48px
     column-gap: 24px
-    grid-template-columns: repeat(auto-fit, 274px)
   &__title
     @include text-16
 
@@ -46,40 +42,36 @@
     margin-top: 12px
 
 
-.balance__card
-  &__wrapper
-    width: 274.33px
-    height: 371px
 
-    border: 1px solid rgba(#3E50721E, 0.12)
-    box-shadow: 0 12px 32px rgba(#7979791E, 0.12), 0 4px 24px rgba(#152D671E, 0.12)
-    border-radius: 16px
-    padding: 154px 24px 24px 24px
-  &__btn
+
+@media only screen and (min-width: 900px)
+  .wrapper
+    min-width: 800px
+    width: 75vw
+
+@media only screen and (max-width: 900px)
+  main
+    margin-top: 24px
+  .title
+    &__info
+      padding: 0 16px
+  .wrapper
     width: 100%
-    margin-top: 89px
-  &__text
-    color: rgba($c-main, 0.56)
-    display: flex
-    justify-content: center
-    text-align: center
 
-    @include text-14
-    font-weight: 400
 
-    margin-top: 9px
-    margin-bottom: 0
-  &__cost
-    display: flex
-    flex-direction: row
+@media only screen and (min-width: 700px)
+  .btn
+    &__filter
+      display: none
 
-    width: 100%
-    justify-content: center
-    align-items: center
-    gap: 8px
-    &__text
-      @include text-14
-      font-weight: 400
-      margin: 0
+  .wrapper__mobile
+    display: none
 
+
+@media only screen and (max-width: 699px)
+  .filters__header
+      display: none
+
+  .bottom__sheet
+    padding: 40px
 

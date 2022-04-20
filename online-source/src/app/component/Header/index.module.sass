@@ -1,53 +1,27 @@
 @import "../../styles/mixins.sass"
-
-body
-  padding: 0
-  margin: 0
-
 .header
-  display: flex
-  align-items: center
-  justify-content: space-between
-  max-width: 1600px
-  min-width: 1200px
-  width: 100vw
-  padding: 0 200px
   &__wrapper
+    box-shadow: 0 0.5px 0 rgba(#0000001E, 0.12)
+
     display: flex
     justify-content: center
+
+.wrapper
+  max-width: 1200px
+  width: 75vw
+
+@media only screen and (min-width: 900px)
+  .wrapper
+    min-width: 900px
+
+@media only screen and (max-width: 900px)
+  .wrapper
     width: 100%
-    height: 80px
-    box-shadow: 0 0.5px 0 #0000001E
-  &__button
-    border: none
-    color: inherit
-    background-color: transparent
-    font-size: 14px
-    line-height: 20px
-    font-weight: 400
-    opacity: 80%
+    padding: 0 16px
 
-    display: flex
-    flex-direction: row
-    align-items: center
+@media only screen and (max-width: 798px)
+  .wrapper
+    width: 100%
+    padding: 0
 
-    &:not(:first-child)
-      margin-left: 51px
-    &__link
-      margin-left: 4px
-
-      display: flex
-      align-items: flex-end
-
-.actions
-  display: flex
-  flex-direction: row
-
-.link
-  @include text-14
-  &:not(:last-child)
-    margin-right: 24px
-
-.logo
-  margin-right: 48px
 

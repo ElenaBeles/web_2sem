@@ -2,10 +2,16 @@
 
 .card
   &__wrapper
+    margin-top: -30px
     max-width: 274px
+    min-width: 200px
     height: 371px
     border-radius: 16px
     background-color: transparent
+
+    display: flex
+    flex-direction: column
+    width: 17vw
   &__category
     color: rgba($c-main, 0.56)
     margin-top: 5px
@@ -37,7 +43,11 @@
     margin: 0
     &__wrapper
       position: relative
-      margin-top: -345px
+      top: 54px
       margin-left: 24px
       height: 30px
 
+@media only screen and (max-width: 550px)
+  .card
+    &__wrapper
+      width: 90vw
