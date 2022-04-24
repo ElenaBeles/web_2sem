@@ -1,9 +1,7 @@
 export interface ICheckbox {
     className?: string
     text?: string;
-    isChecked: boolean
+    isChecked?: boolean
     checkHandler?:any
     index?: number
-    onClick?: any
-    onChange?: any
 }

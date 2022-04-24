@@ -2,6 +2,27 @@
 
 .wrapper
   max-width: 1200px
+  &__filters
+    max-width: 282px
+    width: 23%
+    &__checkboxes
+      border: 1px solid rgba(#3E507228, 0.16)
+      border-radius: 16px
+      padding: 24px
+
+      display: flex
+      flex-direction: column
+      row-gap: 24px
+    &__title
+      @include text-16
+      color: rgba($c-main, 0.8)
+      margin: 0
+    &__section
+      margin-top: 12px
+      display: flex
+      flex-direction: column
+      row-gap: 12px
+
 .title
   &__info
     display: flex
@@ -13,8 +34,8 @@
 .goods
   display: flex
   justify-content: space-between
-
-  margin-bottom: 40px
+  width: 100%
+  margin: 40px 0
   &__wrapper
     border: 1px solid rgba(#3E507228, 0.16)
     width: 23.5vw
@@ -29,7 +50,6 @@
   &__items
     margin-left: 47px
     max-width: 871px
-    margin-top: 44px
     display: flex
     flex-wrap: wrap
     gap: 48px
@@ -41,7 +61,10 @@
   &:not(:first-child)
     margin-top: 12px
 
-
+.btn__reset
+  border-radius: 8px
+  width: 100%
+  margin-top: 23px
 
 
 @media only screen and (min-width: 900px)
