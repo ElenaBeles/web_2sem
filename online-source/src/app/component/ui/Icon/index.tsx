@@ -1,5 +1,3 @@
-import styles from './index.module.sass';
-
 import {FC} from "react";
 import {IIcon} from "./index.interfaces";
 

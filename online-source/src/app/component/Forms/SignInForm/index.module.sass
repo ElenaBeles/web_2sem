@@ -8,9 +8,7 @@
     box-sizing: border-box
     border-radius: 8px
     padding: 20px 16px
-    font-size: 14px
-    font-weight: 400
-    line-height: 20px
+    @include text-14-20
     &:not(:first-child)
       margin-top: 24px
     &::-moz-placeholder, input::-webkit-input-placeholder
@@ -19,9 +17,7 @@
     margin-top: 32px
 
 .error
-  font-weight: 400
-  font-size: 14px
-  line-height: 20px
+  @include text-14-20
   margin-left: 16px
   margin-top: 8px
-  color: #FF4545
+  color: $c-red
