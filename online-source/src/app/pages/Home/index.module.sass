@@ -39,8 +39,6 @@ body
   justify-content: space-between
   column-gap: 24px
   width: 100%
-
-  margin: 48px 0 108px 0
   &__item
     flex: 1
 
@@ -54,16 +52,23 @@ body
   display: none
 
 
+
+@media only screen and (min-width: 900px)
+  .additions
+    margin: 48px 0 108px 0
+
 @media only screen and (max-width: 900px)
   .wrapper
     max-width: 900px
     width: 100vw
+    margin: 0 auto
   .additions
     display: flex
     flex-direction: column
     justify-content: space-between
     column-gap: 24px
-    width: 90%
-    margin-left: 5%
-
+    width: 91%
     position: relative
+    top: -168px
+    margin: 0 auto
+    z-index: 1
