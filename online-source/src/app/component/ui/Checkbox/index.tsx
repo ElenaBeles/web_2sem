@@ -8,7 +8,7 @@ import classNames from "classnames/bind"; classNames();
 const cx = cn.bind(styles);
 
 export const Checkbox: FC<ICheckbox> = (props: ICheckbox) => {
-    const { text, isChecked, checkHandler, index, className } = props
+    const { text, index, className, isChecked, checkHandler} = props
 
     return (
         <div className = { cx( styles.checkbox__wrapper, className) }>

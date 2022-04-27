@@ -6,19 +6,18 @@
   opacity: 64%
 
   font-weight: 500
-  font-size: 14px
-  line-height: 18px
+  @include text-14
   margin-top: 28px
   &Active
     opacity: 100%
-    border-bottom: 3px solid #07C88E
+    border-bottom: 3px solid $c-green
     padding-bottom: 20px
 
 
 @media only screen and (max-width: 798px)
   .link
     &:hover
-      color: #07C88E
+      color: $c-green
     &Active
       border: none
       padding: 0

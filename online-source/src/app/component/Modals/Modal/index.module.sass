@@ -1,6 +1,5 @@
 @import "../../../styles/mixins"
 
-
 .overlay
   position: fixed
   left: 0
@@ -29,10 +28,8 @@
   &__title
     margin: 0
     color: $c-main
-    font-size: 28px
-    line-height: 32px
-
     width: 352px
+    @include text-28-32
     &__wrapper
       display: flex
       flex-direction: row
