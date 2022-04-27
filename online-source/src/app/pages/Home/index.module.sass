@@ -12,14 +12,15 @@ body
   padding: 0
   margin: 0
 
-.wrapper
-  max-width: 1200px
-  min-width: 900px
-  width: 75vw
-  &__extended
-    max-width: 1244px
-    min-width: 944px
-    width: 100%
+@media only screen and (min-width: 900px)
+  .wrapper
+    max-width: 1200px
+    min-width: 900px
+    width: 75vw
+    &__extended
+      max-width: 1244px
+      min-width: 944px
+      width: 100%
 
 .slider
   width: 100%
@@ -53,3 +54,16 @@ body
   display: none
 
 
+@media only screen and (max-width: 900px)
+  .wrapper
+    max-width: 900px
+    width: 100vw
+  .additions
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    column-gap: 24px
+    width: 90%
+    margin-left: 5%
+
+    position: relative
