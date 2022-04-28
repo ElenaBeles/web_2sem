@@ -6,13 +6,10 @@
     display: flex
     flex-direction: row
     &:checked
-      background: #07C88E
+      background: $c-green
   &__title
     @include text-14
-    font-weight: 400
-    font-style: normal
     color: rgba($c-main, 0.74)
-
     display: flex
     align-items: end
     &:before
@@ -26,11 +23,11 @@
       height: 18px
       border-radius: 4px
       background: #FFF
-      border: 1.5px solid rgba(0, 11, 38, 0.4)
+      border: 1.5px solid rgba($c-main, 0.4)
       border-image: initial
       vertical-align: middle
 
 .checkbox:checked+label::before
-  background-color: #07C88E
+  background-color: $c-green
   content: url("../../../assets/img/checkbox.svg")
-  border: 1.5px solid rgba(#07C88E, 0.4)
+  border: 1.5px solid rgba($c-green, 0.4)

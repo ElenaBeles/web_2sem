@@ -1,10 +1,7 @@
 import styles from './index.module.sass';
-
 import {ICost} from "./index.interfaces";
 import {FC} from "react";
 import {Icon} from "../Icon";
-
-
 
 export const Cost: FC<ICost> = (props: ICost) => {
     const { cost, size } = props;

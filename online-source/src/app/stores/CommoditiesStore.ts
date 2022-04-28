@@ -1,4 +1,4 @@
-import {CommodityModel} from "../models/СommodityModel";
+import { ProductModel } from "../models/ProductModel";
 import {MainStore} from "./MainStore";
 import {action, makeObservable, observable} from "mobx";
 
@@ -8,15 +8,16 @@ import third from "../mocks/img/3.png";
 import fourth from "../mocks/img/4.png";
 import fifth from "../mocks/img/5.png";
 
-
-const collectionMock = [
+const collectionMock: ProductModel[] = [
     {
         id: 1,
         title: "Nike Air Max 2021",
         category: "Мужская обувь",
         cost: 1000,
         posterImg: first,
-        brand: "NIKE"
+        brand: "NIKE",
+        rating: 31,
+        date: 2021
     },
     {
         id: 2,
@@ -24,7 +25,9 @@ const collectionMock = [
         category: "Мужская обувь",
         cost: 750,
         posterImg: second,
-        brand: "NIKE"
+        brand: "NIKE",
+        rating: 32,
+        date: 2022
     },
     {
         id: 3,
@@ -32,7 +35,9 @@ const collectionMock = [
         category: "мужская",
         cost: 1200,
         posterImg: third,
-        brand: "Adidas"
+        brand: "Adidas",
+        rating: 33,
+        date: 2017
     },
     {
         id: 4,
@@ -40,7 +45,9 @@ const collectionMock = [
         category: "женская",
         cost: 1000,
         posterImg: fourth,
-        brand: "H&M"
+        brand: "H&M",
+        rating: 23,
+        date: 2032
     },
     {
         id: 5,
@@ -48,31 +55,33 @@ const collectionMock = [
         category: "мужская",
         cost: 2100,
         posterImg: fifth,
-        brand: "NIKE"
+        brand: "NIKE",
+        rating: 31,
+        date: 2014
     }
 ]
 
 
 
 export class CommoditiesStore {
-    commodities: CommodityModel[];
+    products: ProductModel[];
 
     constructor(public mainStore : MainStore) {
         makeObservable(this, {
-            commodities: observable,
+            products: observable,
             addCommodity: action,
             removeCommodity: action
         })
 
-        this.commodities = collectionMock;
+        this.products = collectionMock;
 
     }
 
-    addCommodity = (commodity: CommodityModel) => {
-        this.commodities.push(commodity);
+    addCommodity = (product: ProductModel) => {
+        this.products.push(product);
     }
 
-    removeCommodity = (commodity: CommodityModel) => {
-        this.commodities.unshift(commodity);
+    removeCommodity = (product: ProductModel) => {
+        this.products.unshift(product);
     }
 }

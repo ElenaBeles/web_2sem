@@ -5,11 +5,12 @@ import styles from './index.module.sass';
 import cn from "classnames/bind";
 import classNames from "classnames/bind";
 import {Button} from "../Button";
+import {Link} from "react-router-dom";
 
 const cx = cn.bind(styles);
 
 export const Slide: FC<ISlide> = (props: ISlide) => {
-    const {title, text, btn_text, color, img } = props
+    const {title, text, btn_text, color, img, link = '' } = props
     return (
         <div className={ cx( styles.slide, {
             slide__blue: color === "blue",
@@ -21,8 +22,10 @@ export const Slide: FC<ISlide> = (props: ISlide) => {
                     { title }
                 </h1>
                 <p className={ styles.slide__text }>{ text }</p>
-                <Button className={ styles.slide__btn } text={ btn_text } type={ "button"} padding = { '12'}/>
-            </div>
+                <Link to={link}>
+                    <Button className={ styles.slide__btn } text={ btn_text } type={ "button"} padding = { '12'}/>
+                </Link>
+                </div>
             <img className={ styles.slide__img } src={ img } alt=""/>
         </div>
     );

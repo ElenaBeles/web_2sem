@@ -1,6 +1,5 @@
 import styles from './index.module.sass';
 import {FC} from "react";
-import {IButton} from "../Button/index.interfaces";
 import {IButtonWithIcon} from "./index.interfaces";
 import {Icon} from "../Icon";
 
